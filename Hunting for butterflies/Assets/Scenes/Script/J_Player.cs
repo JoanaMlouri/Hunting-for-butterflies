@@ -31,14 +31,14 @@ public class J_Player : MonoBehaviour
 
         // O presonagem pula
         isGrounded = Physics2D.OverlapCircle(transform.position, groundCheckRadius, groundLayer);
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
-            Jump();
+           Jump();
         }
     }
     // Parte da função pular
     void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+       rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 }
